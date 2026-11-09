@@ -1,0 +1,165 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    
+    /* Default Accent: Electric Coral */
+    --accent-primary: #F43F5E;
+    --accent-hover: #E11D48;
+    --accent-light: #FFE4E6;
+    --accent-subtle: #FFF1F2;
+    --accent-ring: rgba(244, 63, 94, 0.35);
+    --accent-text: #FFFFFF;
+    --accent-border: #FDA4AF;
+
+    /* Light Mode surfaces */
+    --bg-page: #F8FAFC;
+    --bg-surface: #FFFFFF;
+    --bg-surface-hover: #F1F5F9;
+    --bg-subtle: #F8FAFC;
+    --border-subtle: #E2E8F0;
+    --border-medium: #CBD5E1;
+    --text-primary: #0F172A;
+    --text-secondary: #475569;
+    --text-muted: #94A3B8;
+    --card-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05), 0 2px 6px -1px rgba(15, 23, 42, 0.03);
+    --modal-overlay: rgba(15, 23, 42, 0.6);
+  }
+
+  /* Accents */
+  :root[data-accent="coral"] {
+    --accent-primary: #F43F5E;
+    --accent-hover: #E11D48;
+    --accent-light: #FFE4E6;
+    --accent-subtle: #FFF1F2;
+    --accent-ring: rgba(244, 63, 94, 0.35);
+    --accent-text: #FFFFFF;
+    --accent-border: #FDA4AF;
+  }
+
+  :root[data-accent="emerald"] {
+    --accent-primary: #10B981;
+    --accent-hover: #059669;
+    --accent-light: #D1FAE5;
+    --accent-subtle: #ECFDF5;
+    --accent-ring: rgba(16, 185, 129, 0.35);
+    --accent-text: #FFFFFF;
+    --accent-border: #6EE7B7;
+  }
+
+  :root[data-accent="violet"] {
+    --accent-primary: #8B5CF6;
+    --accent-hover: #7C3AED;
+    --accent-light: #EDE9FE;
+    --accent-subtle: #F5F3FF;
+    --accent-ring: rgba(139, 92, 246, 0.35);
+    --accent-text: #FFFFFF;
+    --accent-border: #C4B5FD;
+  }
+
+  :root[data-accent="amber"] {
+    --accent-primary: #F59E0B;
+    --accent-hover: #D97706;
+    --accent-light: #FEF3C7;
+    --accent-subtle: #FFFBEB;
+    --accent-ring: rgba(245, 158, 11, 0.35);
+    --accent-text: #FFFFFF;
+    --accent-border: #FCD34D;
+  }
+
+  :root[data-accent="ocean"] {
+    --accent-primary: #0EA5E9;
+    --accent-hover: #0284C7;
+    --accent-light: #E0F2FE;
+    --accent-subtle: #F0F9FF;
+    --accent-ring: rgba(14, 165, 233, 0.35);
+    --accent-text: #FFFFFF;
+    --accent-border: #7DD3FC;
+  }
+
+  :root[data-accent="mint"] {
+    --accent-primary: #14B8A6;
+    --accent-hover: #0D9488;
+    --accent-light: #CCFBF1;
+    --accent-subtle: #F0FDFA;
+    --accent-ring: rgba(20, 184, 166, 0.35);
+    --accent-text: #FFFFFF;
+    --accent-border: #5EEAD4;
+  }
+
+  /* Dark mode overrides */
+  .dark {
+    --bg-page: #0B0F19;
+    --bg-surface: #111827;
+    --bg-surface-hover: #1F2937;
+    --bg-subtle: #162032;
+    --border-subtle: #1F2937;
+    --border-medium: #374151;
+    --text-primary: #F9FAFB;
+    --text-secondary: #9CA3AF;
+    --text-muted: #6B7280;
+    --card-shadow: 0 4px 25px -2px rgba(0, 0, 0, 0.4), 0 2px 8px -1px rgba(0, 0, 0, 0.3);
+    --modal-overlay: rgba(0, 0, 0, 0.75);
+  }
+
+  /* Dark mode accent adjustments for subtle backgrounds & borders */
+  .dark[data-accent="coral"] {
+    --accent-light: rgba(244, 63, 94, 0.2);
+    --accent-subtle: rgba(244, 63, 94, 0.12);
+    --accent-border: rgba(244, 63, 94, 0.4);
+  }
+
+  .dark[data-accent="emerald"] {
+    --accent-light: rgba(16, 185, 129, 0.2);
+    --accent-subtle: rgba(16, 185, 129, 0.12);
+    --accent-border: rgba(16, 185, 129, 0.4);
+  }
+
+  .dark[data-accent="violet"] {
+    --accent-light: rgba(139, 92, 246, 0.2);
+    --accent-subtle: rgba(139, 92, 246, 0.12);
+    --accent-border: rgba(139, 92, 246, 0.4);
+  }
+
+  .dark[data-accent="amber"] {
+    --accent-light: rgba(245, 158, 11, 0.2);
+    --accent-subtle: rgba(245, 158, 11, 0.12);
+    --accent-border: rgba(245, 158, 11, 0.4);
+  }
+
+  .dark[data-accent="ocean"] {
+    --accent-light: rgba(14, 165, 233, 0.2);
+    --accent-subtle: rgba(14, 165, 233, 0.12);
+    --accent-border: rgba(14, 165, 233, 0.4);
+  }
+
+  .dark[data-accent="mint"] {
+    --accent-light: rgba(20, 184, 166, 0.2);
+    --accent-subtle: rgba(20, 184, 166, 0.12);
+    --accent-border: rgba(20, 184, 166, 0.4);
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--bg-page);
+    color: var(--text-primary);
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-medium);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}

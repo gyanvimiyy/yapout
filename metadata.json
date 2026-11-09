@@ -1,0 +1,8 @@
+{
+  "name": "Remix YapOut — Social Hangouts, Community \u0026 Activities",
+  "description": "Discover like-minded friends, find compatible hangout partners, explore campus activities, and turn plans into real social experiences.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
